@@ -1,0 +1,17 @@
+{
+    "webserver": {
+        "host":"127.0.0.1",
+        "port":"8000",
+        "loglevel":"info",
+        "workers":5,
+        "limit_concurrency":50,
+        "limit_max_requests":150
+    },
+    "tokens": {
+        "customer_demo_1" : "X4dVTJkZUvYCSRqt1tvA3VchtqgSnV8s",
+        "customer_demo_2" : "psjVmQC3dkfmXaXfEvUPdtJT1wEr2K4q"
+    },
+    "common": {
+        "salt" : "aB35DjTNmSVBHwUMZC5pv2ehvnP6fC96pCCLCZGrFNhXrTQhXdwwmrVtAh3G"
+    }
+}

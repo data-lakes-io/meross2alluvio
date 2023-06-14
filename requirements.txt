@@ -1,0 +1,5 @@
+##### Requirements for Meross2Alluvio #####
+meross_iot==0.4.5.9
+fastapi
+'uvicorn[standard]'
+cryptography
