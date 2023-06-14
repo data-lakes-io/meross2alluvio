@@ -47,11 +47,11 @@ async def create_request_build_credentials(model: models.RequestCredentials):
 async def create_request_consumption(model: models.RequestConsumption,
                                      nonce: Annotated[list[str] | None, Header()] = None,  
                                      token: Annotated[list[str] | None, Header()] = None,
-                                     connection: Annotated[list[str] | None, Header()] = None):
+                                     connectionstring: Annotated[list[str] | None, Header()] = None):
     # Check all parameter
     if (token is None):
         return { "Invalid Request: Token Header missing" }    
-    if (connection is None):
+    if (connectionstring is None):
         return { "Invalid Request: Connection Header missing" }
     if (nonce is None):
         return { "Invalid Request: Nonce Header missing" }
@@ -60,7 +60,7 @@ async def create_request_consumption(model: models.RequestConsumption,
         return {"Invalid Request: Invalid Token"}
 
     # Get Credentials
-    credentials = await getCredentials(connection[0],nonce[0],token[0])
+    credentials = await getCredentials(connectionstring[0],nonce[0],token[0])
     if (credentials[0] == ""):
         return {"Invalid Request: Credentials can not be found" }
     
@@ -71,12 +71,12 @@ async def create_request_consumption(model: models.RequestConsumption,
 async def create_request_consumption(model: models.RequestConsumption,
                                      nonce: Annotated[list[str] | None, Header()] = None,  
                                      token: Annotated[list[str] | None, Header()] = None,
-                                     connection: Annotated[list[str] | None, Header()] = None):
+                                     connectionstring: Annotated[list[str] | None, Header()] = None):
     
     # Check all parameter
     if (token is None):
         return { "Invalid Request: Token Header missing" }    
-    if (connection is None):
+    if (connectionstring is None):
         return { "Invalid Request: Connection Header missing" }
     if (nonce is None):
         return { "Invalid Request: Nonce Header missing" }
@@ -85,7 +85,7 @@ async def create_request_consumption(model: models.RequestConsumption,
         return {"Invalid Request: Invalid Token"}
 
     # Get Credentials
-    credentials = await getCredentials(connection[0],nonce[0],token[0])
+    credentials = await getCredentials(connectionstring[0],nonce[0],token[0])
     if (credentials[0] == ""):
         return {"Invalid Request: Credentials can not be found" }
 
